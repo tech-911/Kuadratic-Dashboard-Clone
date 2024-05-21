@@ -1,0 +1,9 @@
+@media screen and (max-width: 1751px) {
+  .calenderWrapper .ant-picker-calendar .ant-picker-calendar-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}

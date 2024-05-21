@@ -1,0 +1,10 @@
+/* styles.css */
+.custom-datepicker .ant-picker-input input::placeholder {
+  text-align: center; /* Center the text in the date button */
+  /* width: ; */
+}
+
+/* Hide the default icon */
+.custom-datepicker .ant-picker-suffix {
+  display: none;
+}
