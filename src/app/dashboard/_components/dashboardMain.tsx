@@ -44,10 +44,10 @@ const DashboardMainView = () => {
   ];
 
   return (
-    <div className="pl-[26px] pr-[16px] pt-[32px] w-full">
+    <div className="px-[26px] xl:pl-[26px] xl:pr-[16px] pt-[32px] w-full">
       <SubNav />
       {/* -------------------Status------------------------- */}
-      <div className="mt-12 flex flex-row items-center w-full gap-[15px]">
+      <div className="mt-12 flex flex-col sm:flex-row items-center w-full gap-[15px]">
         {statusData?.map(({ id, heading, value, percentage, theme }) => (
           <StatusWidget
             key={id}
@@ -58,8 +58,8 @@ const DashboardMainView = () => {
           />
         ))}
       </div>
-      <div className="mt-12 h-[450px] w-full px-10 py-6 bg-[#ffffff] rounded-[11px] flex flex-col items-center gap-[33px]">
-        <div className="flex flex-row items-center justify-end w-full gap-2">
+      <div className="mt-12 h-[450px] w-full px-4 md:px-10 py-6 bg-[#ffffff] rounded-[11px] flex flex-col items-center gap-[33px]">
+        <div className="flex flex-row-reverse md:flex-row items-center justify-end w-full gap-2">
           <Dropdown menu={{ items }} trigger={["click"]}>
             <div className="rounded-[5px] bg-[#F8FAFB] px-[18px] py-[10px] h-[42px] flex flex-row items-center gap-[5px] cursor-pointer">
               <p className="text-[#666666] text-[16px] font-[600] leading-[17px] text-center">
@@ -85,7 +85,7 @@ const DashboardMainView = () => {
         </div>
         <GraphComponent />
       </div>
-      <div className="mt-8 w-full mb-[100px]">
+      <div className="mt-8 w-full xl:mb-[100px] mb-20px">
         <GenerateReportButton />
       </div>
     </div>

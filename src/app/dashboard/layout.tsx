@@ -15,15 +15,15 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col items-center w-screen h-screen bg-[#F4F4F4]">
+    <div className="flex flex-col items-center w-screen h-screen bg-[#F4F4F4] overflow-hidden">
       <div className="flex flex-row items-start flex-1 w-full h-[93%]">
-        <div className="w-[8%] h-full">
+        <div className="lg:w-[8%] w-0 overflow-hidden h-full">
           <SideOption />
         </div>
-        <div className="w-[20%] h-full">
+        <div className="overflow-hidden w-0 lg:w-[20%] h-full">
           <SideBar />
         </div>
-        <div className="flex flex-col items-center w-[72%] h-full">
+        <div className="flex flex-col items-center w-full lg:w-[72%] h-full">
           <Nav />
           {children}
         </div>

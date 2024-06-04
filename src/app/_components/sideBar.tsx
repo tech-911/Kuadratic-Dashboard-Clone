@@ -22,7 +22,7 @@ const SideBar = () => {
       <div className="flex flex-col items-center gap-4 w-full mt-[311px]">
         {/* ------------messages button----------------- */}
         <div
-          className={`cursor-pointer p-2 flex flex-row items-center justify-between h-[50px] gap-1 xl:gap-3 rounded-[8px] w-full bg-[#ffffff]`}
+          className={`cursor-pointer p-2 flex flex-col xl:flex-row items-center justify-between xl:h-[50px] gap-1 xl:gap-3 rounded-[8px] w-full bg-[#ffffff]`}
         >
           <p
             onClick={() => setTab(true)}

@@ -66,3 +66,6 @@
   }
 }
 
+.ant-drawer-body {
+  padding: 0px !important;
+}

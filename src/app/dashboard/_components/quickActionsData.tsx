@@ -11,6 +11,8 @@ export type quickActionDataType = {
   date: string | null;
   widgetType: string;
   data: dataValueType[] | null;
+  handleToggle?: any;
+  isOpen?: boolean;
 };
 
 export const quickActionData: quickActionDataType[] = [

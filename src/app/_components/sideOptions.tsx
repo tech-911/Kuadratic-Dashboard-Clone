@@ -27,7 +27,9 @@ const SideOption = () => {
               />
             </div>
           </div>
-          <p className="text-[#404040] text-[10px] font-[500]">{name}</p>
+          <p className="text-[#404040] text-center text-[10px] font-[500]">
+            {name}
+          </p>
         </div>
       ))}
     </div>

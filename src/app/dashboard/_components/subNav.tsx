@@ -107,23 +107,23 @@ const SubNav = () => {
   ];
 
   return (
-    <div className="bg-[#ffffff] h-[43px] w-full py-[7.6px] pr-[12px] flex flex-1 flex-row items-center">
+    <div className="bg-[#ffffff] h-fit lg:h-[43px] lg:gap-0 gap-4 w-full md:py-[7.6px] py-[16px] pl-[12px] pr-[12px] flex flex-1 flex-wrap flex-row items-center">
       {/* ------------------Search----------------------- */}
-      <div className="relative h-full sm:grow w-[10%]">
+      <div className="relative h-full sm:grow w-full md:w-[10%]">
         <Icon
           icon="gg:search"
           className="absolute left-[10px] top-[3px] text-[24px] text-[#2E2E48]"
         />
         <input
           type="text"
-          className="h-full pl-[45px] xl:placeholder:text-[#A098AE] placeholder:text-[#ffffff] border-none outline-none bg-[#ffffff] w-full placeholder:text-[18px]"
+          className="h-full pl-[45px] xl:placeholder:text-[#A098AE] md:placeholder:text-[#ffffff] placeholder:text-[#a098ad] border-none outline-none bg-[#ffffff] w-full placeholder:text-[18px]"
           placeholder="Search here..."
         />
       </div>
 
-      <div className="flex flex-row items-center gap-2 h-full">
+      <div className="flex flex-row items-center gap-2 h-full flex-wrap">
         {/* ----------------------Date----------------------- */}
-        <div className="cursor-pointer w-[15%] flex flex-row items-center gap-1 relative">
+        <div className="cursor-pointer w-[100px] md:w-[15%] flex flex-row items-center gap-1 relative">
           {/* <Icon
             icon="lets-icons:date-today"
             className="text-[20px] text-[#666666] absolute right-[1px]"
@@ -142,7 +142,7 @@ const SubNav = () => {
         </div>
         {/* ----------------------Grade-------------------------------- */}
         <Dropdown menu={{ items }} trigger={["click"]}>
-          <div className="border-[#EAEAEA] border h-full w-[20%] flex flex-row items-center cursor-pointer">
+          <div className="border-[#EAEAEA] border h-full w-[150px] md:w-[20%] flex flex-row items-center cursor-pointer">
             <div className="w-[25%] h-full border-[#EAEAEA] border-r flex flex-row items-center justify-center">
               <Icon
                 icon="icons8:student"

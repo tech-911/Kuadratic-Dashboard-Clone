@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Checkbox, Dropdown } from "antd";
 import type { CheckboxProps, MenuProps } from "antd";
@@ -13,6 +13,8 @@ const QuickActionWidget = ({
   date,
   widgetType,
   data,
+  handleToggle,
+  isOpen,
 }: quickActionDataType) => {
   const onChange: CheckboxProps["onChange"] = (e) => {
     console.log(`checked = ${e.target.checked}`);
@@ -51,7 +53,10 @@ const QuickActionWidget = ({
 
   return (
     <div className="flex flex-col items-center gap-[17px] w-full">
-      <div className="flex flex-row items-center justify-between gap-2 bg-[#FAFAFA] rounded-l-[10px] h-[55px] w-full relative overflow-hidden pl-[12px] xl:pl-[26px] xl:pr-[10px] pr-[4px]">
+      <div
+        onClick={handleToggle}
+        className="cursor-pointer flex flex-row items-center justify-between gap-2 bg-[#FAFAFA] rounded-l-[10px] h-[55px] w-full relative overflow-hidden pl-[12px] xl:pl-[26px] xl:pr-[10px] pr-[4px]"
+      >
         <div className="absolute top-0 left-0 w-[6px] h-full bg-[#33357D]"></div>
         <p className="text-[#404040] text-[13px] font-[600] leading-[20px]">
           {heading}
@@ -64,7 +69,13 @@ const QuickActionWidget = ({
         </div>
       </div>
       {widgetType === "card" ? (
-        <div className="border border-[#ECECEC] w-full h-fit p-[10px] rounded-[10px]">
+        <div
+          className={`w-full overflow-hidden rounded-[10px] transition-all ease-in-out delay-100 duration-700 ${
+            isOpen
+              ? "p-[10px] max-h-[500px] border border-[#ECECEC]"
+              : "p-0 max-h-0"
+          }`}
+        >
           <div className="w-full rounded-[10px] bg-[#F8F8FB] py-[11px] flex flex-col items-center gap-[10px]">
             <p className="text-[#404040] text-[13px] font-[600] leading-[20px]">
               {date}
@@ -72,7 +83,7 @@ const QuickActionWidget = ({
             {data?.map(({ id, name, value, iconValue, iconColor }) => (
               <div
                 key={id}
-                className="h-[35px] w-full bg-[#ffffff] flex flex-row items-center justify-between gap-[5px] pl-[10px]"
+                className="h-[35px] w-full bg-[#ffffff] flex flex-row items-center justify-center gap-5 xl:justify-between xl:gap-[5px] pl-[10px]"
               >
                 <Checkbox onChange={onChange}>
                   <p className="text-[#696565] text-[10px] font-[400] leading-[15px]">
@@ -110,7 +121,17 @@ const QuickActionWidget = ({
       ) : (
         ""
       )}
-      {widgetType === "calender" ? <CalendarWidget /> : ""}
+      {widgetType === "calender" ? (
+        <div
+          className={`overflow-hidden transition-all ease-in-out delay-100 duration-700 ${
+            !isOpen ? "max-h-0" : "max-h-[500px]"
+          }`}
+        >
+          <CalendarWidget />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
